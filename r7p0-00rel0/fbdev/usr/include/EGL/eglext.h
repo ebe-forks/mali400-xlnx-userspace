@@ -444,6 +444,11 @@ typedef EGLBoolean (EGLAPIENTRYP PFNEGLQUERYSTREAMTIMEKHRPROC)(EGLDisplay dpy, E
 #define EGL_OPENGL_ES3_BIT_KHR				    0x00000040
 #endif
 
+#ifndef EGL_KHR_create_context_no_error
+#define EGL_KHR_create_context_no_error 1
+#define EGL_CONTEXT_OPENGL_NO_ERROR_KHR   0x31B3
+#endif /* EGL_KHR_create_context_no_error */
+
 #ifndef EGL_KHR_surfaceless_context
 #define EGL_KHR_surfaceless_context 1
 /* No tokens/entry points, just relaxes an error condition */
@@ -648,6 +653,16 @@ typedef EGLBoolean (EGLAPIENTRYP PFNEGLSWAPBUFFERSWITHDAMAGEEXTPROC) (EGLDisplay
 EGLAPI EGLBoolean EGLAPIENTRY eglSwapBuffersWithDamageEXT (EGLDisplay dpy, EGLSurface surface, EGLint *rects, EGLint n_rects);
 #endif
 #endif /* EGL_EXT_swap_buffers_with_damage */
+
+#ifndef EGL_TIZEN_image_native_buffer
+#define EGL_TIZEN_image_native_buffer 1
+#define EGL_NATIVE_BUFFER_TIZEN            0x32A0
+#endif /* EGL_TIZEN_image_native_buffer */
+
+#ifndef EGL_TIZEN_image_native_surface
+#define EGL_TIZEN_image_native_surface 1
+#define EGL_NATIVE_SURFACE_TIZEN           0x32A1
+#endif /* EGL_TIZEN_image_native_surface */
 
 #ifdef __cplusplus
 }
